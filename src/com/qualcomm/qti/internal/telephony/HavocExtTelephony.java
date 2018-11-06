@@ -40,6 +40,10 @@ import org.codeaurora.internal.IDepersoResCallback;
 import org.codeaurora.internal.IDsda;
 import org.codeaurora.internal.IExtTelephony;
 
+import org.codeaurora.internal.Token;
+import org.codeaurora.internal.Client;
+import org.codeaurora.internal.INetworkCallback;
+
 import java.util.Iterator;
 
 import static android.telephony.SubscriptionManager.INVALID_SUBSCRIPTION_ID;
@@ -461,6 +465,59 @@ public class HavocExtTelephony extends IExtTelephony.Stub {
     public int getCurrentPrimaryCardSlotId() {
         // I hope we don't use this
         return -1;
+    }
+
+    @Override
+    public Token enable5g(int slotId, Client client){
+        // I hope we don't use this
+        return null;
+    }
+
+    @Override
+    public Token disable5g(int slotId, Client client){
+        // I hope we don't use this
+        return null;
+    }
+
+    @Override
+    public Token enable5gOnly(int slotId, Client client){
+        // I hope we don't use this
+        return null;
+    }
+
+    @Override
+    public Token query5gStatus(int slotId, Client client){
+        // I hope we don't use this
+        return null;
+    }
+
+    @Override
+    public Token queryNrDcParam(int slotId, Client client){
+        // I hope we don't use this
+        return null;
+    }
+
+    @Override
+    public Token queryNrBearerAllocation(int slotId, Client client){
+        // I hope we don't use this
+        return null;
+    }
+
+    @Override
+    public Token queryNrSignalStrength(int slotId, Client client){
+        // I hope we don't use this
+        return null;
+    }
+
+    @Override
+    public Client registerCallback(String packageName, INetworkCallback callback){
+        // I hope we don't use this
+        return null;
+    }
+
+    @Override
+    public void unRegisterCallback(INetworkCallback callback){
+        // I hope we don't use this
     }
 
     private PhoneAccountHandle subscriptionIdToPhoneAccountHandle(final int subId) {
