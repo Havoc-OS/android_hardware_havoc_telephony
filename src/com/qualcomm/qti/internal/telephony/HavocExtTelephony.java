@@ -51,7 +51,7 @@ import static android.telephony.TelephonyManager.MultiSimVariants.DSDA;
 
 import static com.android.internal.telephony.uicc.IccCardStatus.CardState.CARDSTATE_PRESENT;
 
-public class LineageExtTelephony extends IExtTelephony.Stub {
+public class HavocExtTelephony extends IExtTelephony.Stub {
 
     class UiccStatus {
 
@@ -88,7 +88,7 @@ public class LineageExtTelephony extends IExtTelephony.Stub {
     // From IccCardProxy.java
     private static final int EVENT_ICC_CHANGED = 3;
 
-    private static LineageExtTelephony sInstance;
+    private static HavocExtTelephony sInstance;
 
     private CommandsInterface[] mCommandsInterfaces;
     private Context mContext;
@@ -107,16 +107,16 @@ public class LineageExtTelephony extends IExtTelephony.Stub {
         sInstance = getInstance(context, phones, commandsInterfaces);
     }
 
-    public static LineageExtTelephony getInstance(Context context, Phone[] phones,
+    public static HavocExtTelephony getInstance(Context context, Phone[] phones,
             CommandsInterface[] commandsInterfaces) {
         if (sInstance == null) {
-            sInstance = new LineageExtTelephony(context, phones, commandsInterfaces);
+            sInstance = new HavocExtTelephony(context, phones, commandsInterfaces);
         }
 
         return sInstance;
     }
 
-    private LineageExtTelephony(Context context, Phone[] phones,
+    private HavocExtTelephony(Context context, Phone[] phones,
             CommandsInterface[] commandsInterfaces) {
         if (ServiceManager.getService(EXT_TELEPHONY_SERVICE_NAME) == null) {
             ServiceManager.addService(EXT_TELEPHONY_SERVICE_NAME, this);
